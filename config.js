@@ -20,7 +20,7 @@ window.WEDDING = {
     {
       side: "Nhà gái", title: "Tiệc cưới nhà gái",
       slots: [
-        { time: "14:30", date: "Thứ Sáu, 27/11/2026", lunar: "Tức ngày 19/10 Bính Ngọ" },
+        { time: "16:00", date: "Thứ Sáu, 27/11/2026", lunar: "Tức ngày 19/10 Bính Ngọ" },
         { time: "10:00", date: "Thứ Bảy, 28/11/2026", lunar: "Tức ngày 20/10 Bính Ngọ" }
       ],
       place: "Tư gia nhà gái",

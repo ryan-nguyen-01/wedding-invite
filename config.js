@@ -16,6 +16,8 @@ window.WEDDING = {
 
   // TODO: chưa rõ ngày/giờ từng sự kiện. Điền "time" và "date" khi có lịch;
   // để trống thì thiệp hiện "Đang cập nhật".
+  // "pin": toạ độ chính xác cho bản đồ nhúng, VD "20.8123,106.6789" (Google Maps → giữ ngón tay vào nhà → copy số).
+  //        Để trống thì bản đồ tìm theo "address" (chỉ chính xác tới mức thôn/xã).
   events: [
     {
       side: "Nhà gái", title: "Tiệc cưới nhà gái",

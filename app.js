@@ -26,11 +26,18 @@
   });
 
   // Tên khách: ?to=Anh%20Tu%E1%BA%A5n
-  const guest = (new URLSearchParams(location.search).get("to") || "").trim().slice(0, 60);
+  // Một số app (Messenger, Zalo) mã hoá link thêm lần nữa → giải mã tới khi hết "%xx".
+  function cleanName(raw) {
+    let s = raw || "";
+    for (let i = 0; i < 3 && /%[0-9a-f]{2}/i.test(s); i++) {
+      try { s = decodeURIComponent(s); } catch { break; }
+    }
+    return s.replace(/\+/g, " ").replace(/\s+/g, " ").trim().slice(0, 60);
+  }
+  const guest = cleanName(new URLSearchParams(location.search).get("to"));
   if (guest) {
     $("#guestName").textContent = guest;
     $("#guestLine").hidden = false;
-    $$(".guest-inline").forEach(el => (el.textContent = guest));
   }
 
   /* ---------- Mở thiệp ---------- */
@@ -97,6 +104,10 @@
       ${e.lunar ? `<p class="lun">${esc(e.lunar)}</p>` : ""}
       <p class="place">${esc(e.place)}</p>
       <p class="addr">${esc(e.address)}</p>
+      <div class="map-frame">
+        <iframe title="Bản đồ ${esc(e.place)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=${encodeURIComponent(e.pin || e.address)}&hl=vi&z=15&output=embed"></iframe>
+      </div>
       <a class="btn" href="${esc(e.map)}" target="_blank" rel="noopener">📍 Xem chỉ đường</a>
     </article>`;
   }).join("");

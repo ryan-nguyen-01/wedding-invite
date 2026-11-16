@@ -96,12 +96,14 @@
 
   /* ---------- Sự kiện ---------- */
   $("#eventList").innerHTML = W.events.map((e, i) => {
-    const when = [e.time, e.date].filter(Boolean).join(" · ");
+    const slots = (e.slots || []).map(s => `<li>
+        <span class="slot-time">${esc(s.time)}</span>
+        <span class="slot-date">${esc(s.date)}<small>${esc(s.lunar || "")}</small></span>
+      </li>`).join("");
     return `<article class="event" data-reveal="${i % 2 ? "right" : "left"}">
       <div class="side">${esc(e.side)}</div>
       <h3>${esc(e.title)}</h3>
-      <p class="when${when ? "" : " tbd"}">${esc(when || "Thời gian đang cập nhật")}</p>
-      ${e.lunar ? `<p class="lun">${esc(e.lunar)}</p>` : ""}
+      ${slots ? `<ul class="slots">${slots}</ul>` : `<p class="when tbd">Thời gian đang cập nhật</p>`}
       <p class="place">${esc(e.place)}</p>
       <p class="addr">${esc(e.address)}</p>
       <div class="map-frame">

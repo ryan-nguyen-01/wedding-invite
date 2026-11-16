@@ -8,27 +8,32 @@ window.WEDDING = {
   bride: { name: "Phạm Hằng", short: "Hằng", photo: "assets/img/album-01.jpg",
     intro: "Cô dâu — cô gái của mảnh đất Thọ Văn, Phú Thọ." },
 
-  // Mốc đếm ngược (giờ Việt Nam). TODO: thay bằng giờ lễ chính khi có lịch.
-  countdownTo: "2026-11-28T08:00:00+07:00",
+  // Mốc đếm ngược (giờ Việt Nam): tiệc chính nhà trai 11:00 ngày 28/11.
+  countdownTo: "2026-11-28T11:00:00+07:00",
   dateText: "27 & 28 . 11 . 2026",
   lunarText: "Tức ngày 19 & 20 tháng 10 năm Bính Ngọ",
   calendar: { year: 2026, month: 11, highlight: [27, 28] },
 
-  // TODO: chưa rõ ngày/giờ từng sự kiện. Điền "time" và "date" khi có lịch;
-  // để trống thì thiệp hiện "Đang cập nhật".
+  // Mỗi bên có danh sách "slots" (giờ, ngày, âm lịch). Để slots rỗng thì thiệp hiện "Đang cập nhật".
   // "pin": toạ độ chính xác cho bản đồ nhúng, VD "20.8123,106.6789" (Google Maps → giữ ngón tay vào nhà → copy số).
   //        Để trống thì bản đồ tìm theo "address" (chỉ chính xác tới mức thôn/xã).
   events: [
     {
       side: "Nhà gái", title: "Tiệc cưới nhà gái",
-      date: "", time: "", lunar: "",
+      slots: [
+        { time: "14:30", date: "Thứ Sáu, 27/11/2026", lunar: "Tức ngày 19/10 Bính Ngọ" },
+        { time: "10:00", date: "Thứ Bảy, 28/11/2026", lunar: "Tức ngày 20/10 Bính Ngọ" }
+      ],
       place: "Tư gia nhà gái",
       address: "Khu 3, xã Thọ Văn, tỉnh Phú Thọ",
       map: "https://www.google.com/maps/search/?api=1&query=Khu+3+x%C3%A3+Th%E1%BB%8D+V%C4%83n+Ph%C3%BA+Th%E1%BB%8D"
     },
     {
       side: "Nhà trai", title: "Tiệc cưới nhà trai",
-      date: "", time: "", lunar: "",
+      slots: [
+        { time: "16:00", date: "Thứ Sáu, 27/11/2026", lunar: "Tức ngày 19/10 Bính Ngọ" },
+        { time: "11:00", date: "Thứ Bảy, 28/11/2026", lunar: "Tức ngày 20/10 Bính Ngọ" }
+      ],
       place: "Tư gia nhà trai",
       address: "Thôn Linh Khê, xã Trần Phú, TP Hải Phòng",
       map: "https://www.google.com/maps/search/?api=1&query=Th%C3%B4n+Linh+Kh%C3%AA+x%C3%A3+Tr%E1%BA%A7n+Ph%C3%BA+H%E1%BA%A3i+Ph%C3%B2ng"

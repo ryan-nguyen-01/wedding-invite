@@ -3,9 +3,9 @@
  * Các chỗ ghi "TODO" là thông tin còn thiếu, cần cô dâu chú rể xác nhận.
  */
 window.WEDDING = {
-  groom: { name: "Đỗ Khang", short: "Khang", photo: "assets/img/album-12.jpg",
+  groom: { name: "Đỗ Khang", photo: "assets/img/album-12.jpg",
     intro: "Chú rể — chàng trai của làng quê Linh Khê, Hải Phòng." },
-  bride: { name: "Phạm Hằng", short: "Hằng", photo: "assets/img/album-01.jpg",
+  bride: { name: "Phạm Hằng", photo: "assets/img/album-01.jpg",
     intro: "Cô dâu — cô gái của mảnh đất Thọ Văn, Phú Thọ." },
 
   // Mốc đếm ngược (giờ Việt Nam): tiệc chính nhà trai 11:00 ngày 28/11.
@@ -15,8 +15,7 @@ window.WEDDING = {
   calendar: { year: 2026, month: 11, highlight: [27, 28] },
 
   // Mỗi bên có danh sách "slots" (giờ, ngày, âm lịch). Để slots rỗng thì thiệp hiện "Đang cập nhật".
-  // "pin": toạ độ chính xác cho bản đồ nhúng, VD "20.8123,106.6789" (Google Maps → giữ ngón tay vào nhà → copy số).
-  //        Để trống thì bản đồ tìm theo "address" (chỉ chính xác tới mức thôn/xã).
+  // "map": link mở Google Maps cho nút "Xem chỉ đường" (có thể thay bằng link ghim chính xác maps.app.goo.gl/...).
   events: [
     {
       side: "Nhà gái", title: "Tiệc cưới nhà gái",

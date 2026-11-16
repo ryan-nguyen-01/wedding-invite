@@ -14,7 +14,7 @@
 
   /* ---------- Điền nội dung từ config ---------- */
   const keys = {
-    groomShort: W.groom.short, brideShort: W.bride.short, groomName: W.groom.name, brideName: W.bride.name,
+    groomName: W.groom.name, brideName: W.bride.name,
     groomIntro: W.groom.intro, brideIntro: W.bride.intro, dateText: W.dateText, lunarText: W.lunarText
   };
   $$("[data-k]").forEach(el => { el.textContent = keys[el.dataset.k] ?? ""; });
@@ -106,10 +106,6 @@
       ${slots ? `<ul class="slots">${slots}</ul>` : `<p class="when tbd">Thời gian đang cập nhật</p>`}
       <p class="place">${esc(e.place)}</p>
       <p class="addr">${esc(e.address)}</p>
-      <div class="map-frame">
-        <iframe title="Bản đồ ${esc(e.place)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=${encodeURIComponent(e.pin || e.address)}&hl=vi&z=15&output=embed"></iframe>
-      </div>
       <a class="btn" href="${esc(e.map)}" target="_blank" rel="noopener">📍 Xem chỉ đường</a>
     </article>`;
   }).join("");

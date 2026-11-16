@@ -186,8 +186,6 @@ main { max-width: 480px; margin: 0 auto; background: var(--ivory); overflow: hid
 .thanks .thanks-text p { font: italic 400 1.15rem/1.5 var(--serif); max-width: 30ch; margin: 0 auto .6rem; }
 .thanks .thanks-text p.script { font: 400 2.2rem var(--script); color: #f3e3c3; }
 
-.credit { position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-size: 10px; color: rgba(255,255,255,.6); padding: 0 12px; }
-
 /* ---------- Floating buttons ---------- */
 .fab { position: fixed; right: max(14px, calc(50vw - 240px + 14px)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 30; display: grid; gap: 10px; }
 .fab-btn { width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; font-size: 19px; text-decoration: none;
